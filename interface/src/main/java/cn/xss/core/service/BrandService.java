@@ -1,6 +1,7 @@
 package cn.xss.core.service;
 
 import cn.xss.core.pojo.Brand;
+import cn.xss.core.tools.PageHelper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,11 +15,36 @@ import java.util.List;
  */
 @Repository
 public interface BrandService {
+
+
     /**
-     * 根据条件查询
+     * 根据条件查询商品品牌
      *
      * @param brand
      * @return
      */
     List<Brand> findByExample(Brand brand);
+
+    /**
+     * 分页查询商品品牌
+     * @param brand
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    PageHelper.Page<Brand> findByExample(Brand brand, Integer pageNum, Integer pageSize);
+
+    /**
+     * 根据id查询商品品牌
+     * @param brandId
+     * @return
+     */
+    Brand findBrandById(Integer brandId);
+
+    /**
+     * 修改商品品牌信息
+     * @param brand
+     */
+    void updateBrand(Brand brand);
+
 }

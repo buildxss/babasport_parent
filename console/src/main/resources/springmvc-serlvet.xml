@@ -24,6 +24,11 @@
     <!-- 处理器 映射器 适配器 -->
     <mvc:annotation-driven/>
 
+    <!-- 上传文件解析器 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    </bean>
+
     <!-- 视图解析器 -->
     <bean id="jspViewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
